@@ -34,11 +34,112 @@ export const metadata: Metadata = {
     description: "Handcrafted floral arrangements — made with love in Phuket.",
     type: "website",
     locale: "en_TH",
+    images: [
+      {
+        url: "https://flowercorner.zelve.xyz/images/12.jpg",
+        width: 1200,
+        height: 900,
+        alt: "Flower Corner Phuket — Fresh flower arrangements",
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>",
+  },
+  other: {
+    "google-site-verification": "google4e4221cd9cff4799.html",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://flowercorner.zelve.xyz/#business",
+      name: "Flower Corner Phuket",
+      description:
+        "Family-run flower shop in Wichit, Phuket. Custom bouquets for all occasions — birthdays, weddings, sympathy. Fresh flowers, fair prices, delivery across Phuket.",
+      url: "https://flowercorner.zelve.xyz",
+      telephone: "+66950514071",
+      image: "https://flowercorner.zelve.xyz/images/12.jpg",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Wichit, Mueang Phuket District",
+        addressLocality: "Phuket",
+        addressRegion: "Phuket",
+        addressCountry: "TH",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 7.8891078,
+        longitude: 98.3631893,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "11:00",
+        closes: "20:00",
+      },
+      sameAs: [
+        "https://www.instagram.com/flowercorner.hkt/",
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        bestRating: "5",
+        ratingCount: "3",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Alex Koe" },
+          reviewBody:
+            "Best florist here on Phuket, quality designs, affordable. Can also order COD, waited me like 1 hr because I was late without any extra charges, the best place ever. 100% recommended.",
+          reviewRating: { "@type": "Rating", ratingValue: "5" },
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Benyathip" },
+          reviewBody:
+            "ประทับใจร้านนี้มากค่ะ เจ้าของร้านทั้งพี่ผู้ชายและพี่ผู้หญิงใจดี เป็นกันเอง และให้คำแนะนำดีมาก ดอกไม้สวย สด คุณภาพดี และจัดออกมาได้สวยเกินความคาดหวัง คุ้มค่ามาก",
+          reviewRating: { "@type": "Rating", ratingValue: "5" },
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Мария" },
+          reviewBody:
+            "The bouquet is superb, and the price is like a gift; for 700 baht they created a masterpiece.",
+          reviewRating: { "@type": "Rating", ratingValue: "5" },
+        },
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://flowercorner.zelve.xyz/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://flowercorner.zelve.xyz/" },
+        { "@type": "ListItem", position: 2, name: "Gallery", item: "https://flowercorner.zelve.xyz/gallery" },
+        { "@type": "ListItem", position: 3, name: "Custom Order", item: "https://flowercorner.zelve.xyz/order" },
+        { "@type": "ListItem", position: 4, name: "About", item: "https://flowercorner.zelve.xyz/about" },
+        { "@type": "ListItem", position: 5, name: "Contact", item: "https://flowercorner.zelve.xyz/contact" },
+        { "@type": "ListItem", position: 6, name: "Delivery", item: "https://flowercorner.zelve.xyz/delivery" },
+        { "@type": "ListItem", position: 7, name: "Blog", item: "https://flowercorner.zelve.xyz/blog" },
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -49,6 +150,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LayoutClient>{children}</LayoutClient>
       </body>
     </html>

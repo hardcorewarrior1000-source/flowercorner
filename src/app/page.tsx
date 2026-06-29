@@ -16,7 +16,9 @@ export default function HomePage() {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/10.jpg)" }}
+          style={{ backgroundImage: "url(/images/12.jpg)" }}
+          role="img"
+          aria-label="Flower Corner Phuket — Handcrafted flower arrangements"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-4 max-w-3xl">
@@ -50,6 +52,8 @@ export default function HomePage() {
             <div
               className="aspect-[4/3] rounded-2xl bg-cover bg-center shadow-lg"
               style={{ backgroundImage: "url(/images/3.jpg)" }}
+              role="img"
+              aria-label="Fresh flower arrangement at Flower Corner Phuket"
             />
           </div>
           <div>
@@ -81,6 +85,8 @@ export default function HomePage() {
                   n === 2 || n === 6 || n === 10 ? "md:row-span-2 md:aspect-auto" : ""
                 }`}
                 style={{ backgroundImage: `url(/images/${n}.${getExt(n)}` }}
+                role="img"
+                aria-label="Flower arrangement at Flower Corner Phuket"
               />
             ))}
           </div>

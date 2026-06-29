@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLang } from "@/lib/lang-context";
 
-const galleryIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const galleryIds = [1,2,3,4,5,6,7,8,9];
 const items = galleryIds.map((id) => ({
   id,
   titleKey: `gallery.item${id}.title` as const,
@@ -31,6 +31,8 @@ export default function GalleryPage() {
             <div
               className="aspect-[4/3] bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
               style={{ backgroundImage: `url(/images/${item.id}.${item.ext})` }}
+              role="img"
+              aria-label={t(item.titleKey)}
             />
             <div className="p-4">
               <h3 className="font-semibold text-foreground mb-1">
