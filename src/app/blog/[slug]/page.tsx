@@ -6,6 +6,11 @@ const slugs = [
   "choose-perfect-bouquet-occasion",
   "popular-thai-wedding-flowers-meanings",
   "where-to-buy-fresh-flowers-phuket-town",
+  "flower-care-tips-phuket",
+  "mother-day-flowers-2026",
+  "sympathy-flowers-thailand",
+  "seasonal-flowers-phuket",
+  "valentine-flowers-2027",
 ];
 
 export function generateStaticParams() {

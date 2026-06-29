@@ -24,6 +24,26 @@ const posts = [
     slug: "where-to-buy-fresh-flowers-phuket-town",
     date: { en: "June 10, 2026", th: "10 มิถุนายน 2569" },
   },
+  {
+    slug: "flower-care-tips-phuket",
+    date: { en: "July 5, 2026", th: "5 กรกฎาคม 2569" },
+  },
+  {
+    slug: "mother-day-flowers-2026",
+    date: { en: "July 1, 2026", th: "1 กรกฎาคม 2569" },
+  },
+  {
+    slug: "sympathy-flowers-thailand",
+    date: { en: "June 25, 2026", th: "25 มิถุนายน 2569" },
+  },
+  {
+    slug: "seasonal-flowers-phuket",
+    date: { en: "June 20, 2026", th: "20 มิถุนายน 2569" },
+  },
+  {
+    slug: "valentine-flowers-2027",
+    date: { en: "June 15, 2026", th: "15 มิถุนายน 2569" },
+  },
 ];
 
 export default function BlogPage() {
