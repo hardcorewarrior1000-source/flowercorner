@@ -16,6 +16,7 @@ function Nav() {
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
     { href: "/delivery", label: t("nav.delivery") },
+    { href: "/blog", label: t("nav.blog") },
   ];
 
   return (
@@ -126,6 +127,9 @@ function Footer() {
               </Link>
               <Link href="/delivery" className="hover:text-rose-dark transition-colors">
                 {t("nav.delivery")}
+              </Link>
+              <Link href="/blog" className="hover:text-rose-dark transition-colors">
+                {t("nav.blog")}
               </Link>
             </div>
           </div>

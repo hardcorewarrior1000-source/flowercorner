@@ -49,8 +49,7 @@ export default function ContactPage() {
         <div className="bg-white rounded-xl p-6 shadow-md">
           <h3 className="font-semibold text-foreground mb-4">{t("contact.hours.title")}</h3>
           <div className="space-y-2 text-sm text-zinc-600">
-            <p>{t("contact.hours.weekdays")}</p>
-            <p>{t("contact.hours.sunday")}</p>
+            <p>{t("contact.hours.all")}</p>
             <p className="text-zinc-400 mt-3 text-xs">{t("contact.hours.note")}</p>
           </div>
         </div>

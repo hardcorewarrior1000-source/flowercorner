@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useLang } from "@/lib/lang-context";
 
+function getExt(n: number) {
+  return [2, 4, 9].includes(n) ? "png" : "jpg";
+}
+
 export default function HomePage() {
   const { t } = useLang();
 
@@ -76,7 +80,7 @@ export default function HomePage() {
                 className={`aspect-square rounded-xl bg-cover bg-center shadow-md ${
                   n === 2 || n === 6 ? "md:row-span-2 md:aspect-auto" : ""
                 }`}
-                style={{ backgroundImage: `url(/images/${n}.jpg)` }}
+                style={{ backgroundImage: `url(/images/${n}.${getExt(n)}` }}
               />
             ))}
           </div>
@@ -89,6 +93,36 @@ export default function HomePage() {
               {t("home.gallery.cta")}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-3">{t("home.reviews.title")}</h2>
+          <p className="text-zinc-500">{t("home.reviews.text")}</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((n) => (
+            <div
+              key={n}
+              className="bg-white rounded-xl p-6 shadow-md flex flex-col"
+            >
+              <div className="flex items-center gap-1 text-amber-400 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 1l2.39 4.58L17.12 6.8l-3.27 3.18.77 4.52L10 12.06 5.38 14.5l.77-4.52L2.88 6.8l4.73-.62L10 1z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-zinc-600 leading-relaxed mb-3 flex-1">
+                {t(`home.reviews.${n}.text` as any)}
+              </p>
+              <p className="font-semibold text-foreground text-sm">
+                {t(`home.reviews.${n}.name` as any)}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
