@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useLang } from "@/lib/lang-context";
 
-const items = Array.from({ length: 9 }, (_, i) => ({
-  id: i + 1,
-  titleKey: `gallery.item${i + 1}.title` as const,
-  descKey: `gallery.item${i + 1}.desc` as const,
-  priceKey: `gallery.item${i + 1}.price` as const,
-  ext: i === 1 || i === 3 || i === 8 ? "png" : "jpg",
+const galleryIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const items = galleryIds.map((id) => ({
+  id,
+  titleKey: `gallery.item${id}.title` as const,
+  descKey: `gallery.item${id}.desc` as const,
+  priceKey: `gallery.item${id}.price` as const,
+  ext: [2, 4, 9, 14, 15].includes(id) ? "png" : "jpg",
 }));
 
 export default function GalleryPage() {
@@ -37,8 +38,7 @@ export default function GalleryPage() {
               </h3>
               <p className="text-sm text-zinc-500 mb-2">{t(item.descKey)}</p>
               <p className="text-sm font-medium text-rose-dark">
-                {t("gallery.from")} {t("gallery.baht")}
-                {t(item.priceKey)}
+                {t(item.priceKey) === "Custom" ? t("gallery.custom") : `${t("gallery.from")} ${t("gallery.baht")}${t(item.priceKey)}`}
               </p>
             </div>
           </div>

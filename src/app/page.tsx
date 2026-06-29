@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/lang-context";
 
 function getExt(n: number) {
-  return [2, 4, 9].includes(n) ? "png" : "jpg";
+  return [2, 4, 9, 14, 15].includes(n) ? "png" : "jpg";
 }
 
 export default function HomePage() {
@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/1.jpg)" }}
+          style={{ backgroundImage: "url(/images/10.jpg)" }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-4 max-w-3xl">
@@ -74,11 +74,11 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-            {[2, 4, 5, 6, 7, 8].map((n) => (
+            {[10, 2, 14, 4, 11, 12, 5, 6, 13, 7, 8, 15].map((n) => (
               <div
                 key={n}
                 className={`aspect-square rounded-xl bg-cover bg-center shadow-md ${
-                  n === 2 || n === 6 ? "md:row-span-2 md:aspect-auto" : ""
+                  n === 2 || n === 6 || n === 10 ? "md:row-span-2 md:aspect-auto" : ""
                 }`}
                 style={{ backgroundImage: `url(/images/${n}.${getExt(n)}` }}
               />
