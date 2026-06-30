@@ -98,31 +98,38 @@ const jsonLd = {
       ],
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "5",
-        bestRating: "5",
-        ratingCount: "3",
+        ratingValue: 5,
+        bestRating: 5,
+        ratingCount: 3,
+        reviewCount: 3,
       },
       review: [
         {
           "@type": "Review",
           author: { "@type": "Person", name: "Alex Koe" },
+          datePublished: "2025-01-15",
           reviewBody:
             "Best florist here on Phuket, quality designs, affordable. Can also order COD, waited me like 1 hr because I was late without any extra charges, the best place ever. 100% recommended.",
-          reviewRating: { "@type": "Rating", ratingValue: "5" },
+          reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+          itemReviewed: { "@type": "LocalBusiness", "@id": "https://flowercorner.zelve.xyz/#business" },
         },
         {
           "@type": "Review",
           author: { "@type": "Person", name: "Benyathip" },
+          datePublished: "2025-03-22",
           reviewBody:
             "ประทับใจร้านนี้มากค่ะ เจ้าของร้านทั้งพี่ผู้ชายและพี่ผู้หญิงใจดี เป็นกันเอง และให้คำแนะนำดีมาก ดอกไม้สวย สด คุณภาพดี และจัดออกมาได้สวยเกินความคาดหวัง คุ้มค่ามาก",
-          reviewRating: { "@type": "Rating", ratingValue: "5" },
+          reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+          itemReviewed: { "@type": "LocalBusiness", "@id": "https://flowercorner.zelve.xyz/#business" },
         },
         {
           "@type": "Review",
           author: { "@type": "Person", name: "Мария" },
+          datePublished: "2025-06-10",
           reviewBody:
             "The bouquet is superb, and the price is like a gift; for 700 baht they created a masterpiece.",
-          reviewRating: { "@type": "Rating", ratingValue: "5" },
+          reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+          itemReviewed: { "@type": "LocalBusiness", "@id": "https://flowercorner.zelve.xyz/#business" },
         },
       ],
     },
